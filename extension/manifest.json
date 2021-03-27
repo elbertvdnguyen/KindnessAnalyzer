@@ -1,0 +1,16 @@
+{
+	"name": "Kindeness Extension",
+	"description": "Encourage kindness among online writers!",
+	"version": "0.1",
+	"manifest_version": 3,
+	"background": {
+		"service_worker": "background.js",
+		"scripts": ["main.js"]
+	},
+	"permissions": ["storage","contextMenus"],
+	"action": {
+		"default_popup": "popup.html"
+	}
+}
+
+
