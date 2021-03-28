@@ -6,7 +6,7 @@
 	"background": {
 		"service_worker": "background.js"
 	},
-	"permissions": ["storage","contextMenus","webRequest"],
+	"permissions": ["storage","contextMenus","webRequest","tabs"],
 	"host_permissions": ["http://localhost:3000/analyze"],
 
 	"action": {

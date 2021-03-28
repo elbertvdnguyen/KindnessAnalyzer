@@ -33,8 +33,19 @@ post = function(url, data) {
 
 analyzeSentiment = function(inputText) {
 	post("http://localhost:3000/analyze", {text: inputText})
-	.then((result) => {
+	.then(async (result) => {
 		
-		console.log(result.json())});
+		let data = await result.json();
+		console.log(data);
+		if (data.score.score < 0) { 
+		chrome.windows.create({
+			url: chrome.runtime.getURL("sad.html")})
+		}
+		else {
+			chrome.windows.create({
+				url: chrome.runtime.getURL("happy.html")
+			});
+		}
+	})
 
 }
