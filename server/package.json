@@ -1,0 +1,14 @@
+{
+  "name": "kindness",
+  "version": "1.0.0",
+  "description": "Kindness enforcer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Elbert Nguyen and Christian Aguilar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
