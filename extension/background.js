@@ -39,12 +39,20 @@ analyzeSentiment = function(inputText) {
 		console.log(data);
 		if (data.score.score < 0) { 
 		chrome.windows.create({
-			url: chrome.runtime.getURL("sad.html")})
+			url: chrome.runtime.getURL("sad.html"),
+			type: 'popup',
+   			height: 200, width:200,
+			left: 300
+			})
 		}
 		else {
 			chrome.windows.create({
-				url: chrome.runtime.getURL("happy.html")
+				url: chrome.runtime.getURL("happy.html"),
+				type: 'popup',
+ 				height: 200, width:200 ,
+				left: 300
 			});
+
 		}
 	})
 
