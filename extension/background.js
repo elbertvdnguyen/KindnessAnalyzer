@@ -5,15 +5,17 @@ chrome.runtime.onInstalled.addListener(() => {
 	console.log('Default background color set to %cgreen', `color: ${color}`);
 });
 
+/* 
 searchUrbanDict = function (word) {
 	var query = word.selectionText;
 	chrome.tabs.create({url: "http://www.urbandictionary.com/define.php?term=" + query});
 }
+*/
 
 chrome.runtime.onInstalled.addListener(function() {
 	console.log("Adding eddit..");
 	chrome.contextMenus.create({
-	id: 'search-dict',
+	id: 'kindness-check',
 	title: "Check my kindness!",
 	contexts: ["selection"],
 	},(res)=>{console.log(res)});
@@ -21,7 +23,7 @@ chrome.runtime.onInstalled.addListener(function() {
 chrome.contextMenus.onClicked.addListener(function(context) {
 	console.log("FIRED");
 	console.log(context);
-	if (context.menuItemId == 'search-dict') return analyzeSentiment(context.selectionText);
+	if (context.menuItemId == 'kindness-check') return analyzeSentiment(context.selectionText);
 });
 
 post = function(url, data) {
