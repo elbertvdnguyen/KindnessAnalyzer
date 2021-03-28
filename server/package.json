@@ -9,6 +9,7 @@
   "author": "Elbert Nguyen and Christian Aguilar",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/language": "^4.2.2",
     "express": "^4.17.1"
   }
 }

@@ -14,10 +14,27 @@ chrome.runtime.onInstalled.addListener(function() {
 	console.log("Adding eddit..");
 	chrome.contextMenus.create({
 	id: 'search-dict',
-	title: "Search in urbdict",
+	title: "Check my kindness!",
 	contexts: ["selection"],
 	},(res)=>{console.log(res)});
 });
-chrome.contextMenus.onClicked.addListener(function() {
+chrome.contextMenus.onClicked.addListener(function(context) {
 	console.log("FIRED");
+	console.log(context);
+	if (context.menuItemId == 'search-dict') return analyzeSentiment(context.selectionText);
 });
+
+post = function(url, data) {
+	console.log(JSON.stringify(data));
+  return fetch(url, {method: "POST", 
+	  headers: { "Content-Type": "application/json" }
+	  , body: JSON.stringify(data)});
+}
+
+analyzeSentiment = function(inputText) {
+	post("http://localhost:3000/analyze", {text: inputText})
+	.then((result) => {
+		
+		console.log(result.json())});
+
+}
