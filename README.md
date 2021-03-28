@@ -1,1 +1,1 @@
-# MoodAnalyzer
+# The Kindness Extension
